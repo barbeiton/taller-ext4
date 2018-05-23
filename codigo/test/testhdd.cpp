@@ -58,7 +58,7 @@ int main(int argc, char ** argv)
 	test_block_groups(fs);
 
 	//TODO: Completar el código del último ejercicio acá
-    fd_t file = fs->open("/grupos/g15/nota.txt", "aaaaaaa!");
+    fd_t file = fs->open("/grupos/g10/nota.txt", "aaaaaaa!");
     if (file == -1) {
         cout << "Error abriendo archivo" << endl;
         exit(-1);
