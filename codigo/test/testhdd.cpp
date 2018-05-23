@@ -58,20 +58,15 @@ int main(int argc, char ** argv)
 	test_block_groups(fs);
 
 	//TODO: Completar el código del último ejercicio acá
-    cout << "Abriendo archivo" << endl;
     fd_t file = fs->open("/grupos/g15/nota.txt", "aaaaaaa!");
     if (file == -1) {
         cout << "Error abriendo archivo" << endl;
         exit(-1);
     }
-    cout << "Archivo abierto" << endl;
 
-    cout << "Empezando seek" << endl;
-    fs->seek(file, 14000);
-    cout << "Finalizado seek" << endl;
+    fs->seek(file, 13999);
 
 
-    cout << "Leyendo el archivo" << endl;
     unsigned char *out = new unsigned char[50];
     out[0] = 0;
     fs->read(file, out, 50);
@@ -80,7 +75,6 @@ int main(int argc, char ** argv)
     else
         cout << out << endl;
     
-    cout << "Terminado de leer archivo" << endl;
     fs->close(file);
     
     delete[] out;
